@@ -2,12 +2,106 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h3>환영합니다</h3>
-    
-</body>
-</html>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>javascript</title>
+  <script>
+      function eql() {
+          var p = eval(document.getElementById('dap').value);
+          document.getElementById('dap').value = p;
+      }
+      function prt(value) {
+          var p = document.getElementById('dap');
+          
+          if (p.value == 0) p.value = value;
+          else if ((0 <= value && value <= 9) || value == '*' || value == '/'
+                  || value == '+' || value == '-' || value == '%' || value == '.')
+              p.value += value;
+          else if (value == 'C') {
+              p.value = 0;
+          }
+      }
+  </script>
+  <style>
+  
+      table{
+          border: 3px solid blue;
+          margin: 0 auto;
+      }
+      table th {
+          width: 50px;
+          height: 50px;
+          text-align: right;
+          border: 3px solid green;
+          font-size: 40px;
+      }
+      table td {
+          width: 50px;
+          height: 50px;
+          margin: auto;
+  
+      }
+  
+      button {
+          width: 95%;
+          height: 90%;
+          text-align: center;
+          font-size: 40px;
+      }
+      h1 {
+          text-align: center;
+      }
+      #dap{
+      width: 295px;
+      height: 40px;
+      margin: 5px;
+      border:2px solid green;
+      font-size: 22pt;
+      text-align: right;
+      }
+  
+  </style>
+  <h1> 계 산 기 </h1>
+  
+  </head>
+  <body>
+      <table class = "calc">
+      <tr><td colspan="5">
+          <form action="" method="get">
+          <input type="text" id="dap" readonly value="0">
+          </form>
+          </td></tr>
+      <tr>
+      <td><button class="buon" onclick="prt(7)"> 7 </button></td>
+      <td><button class="buon" onclick="prt(8)"> 8 </button></td>
+      <td><button class="buon" onclick="prt(9)"> 9 </button></td>
+      <td colspan="2"><button class="buon" id="C" onclick="prt('C')"> C </button>  </td>
+      </tr>
+  
+      <tr>
+       <td><button class="buon" onclick="prt(4)"> 4 </button></td>
+      <td><button class="buon" onclick="prt(5)"> 5 </button></td>
+      <td><button class="buon" onclick="prt(6)"> 6 </button></td>
+      <td><button class="buon" onclick="prt('/')"> / </button> </td>
+      <td><button class="buon" onclick="prt('%')"> % </button></td>
+      </tr>
+  
+      <tr>
+      <td><button class="buon" onclick="prt(1)"> 1 </button></td>
+      <td><button class="buon" onclick="prt(2)"> 2 </button></td>
+      <td><button class="buon" onclick="prt(3)"> 3 </button></td>
+      <td><button class="buon" onclick="prt('*')"> * </button></td>
+      <td><button class="buon" onclick="prt('+')"> + </button></td>
+      </tr>
+  
+      <tr>
+      <td><button class="buon" onclick="prt(0)"> 0 </button></td>
+      <td><button class="buon" onclick="prt('.')"> . </button></td>
+      <td colspan="2"><button class="buon" onclick="eql()"> = </button></td>
+      <td><button class="buon" onclick="prt('-')"> - </button></td>
+      </tr>
+      
+      </table>
+  
+  </body>
+  </html>
+  
